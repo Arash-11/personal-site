@@ -1,7 +1,7 @@
 ---
 author: arash-11
 pubDatetime: 2022-05-09
-title: What are the different "prototype"s in JavaScript?
+title: What are the different prototypes in JavaScript?
 postSlug: js-prototypes
 featured: false
 description: Look at the difference between `prototype`, ` __proto__`, `[[Prototype]]`, and `Object.getPrototypeOf()`.
