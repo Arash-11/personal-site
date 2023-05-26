@@ -1,7 +1,7 @@
 ---
 author: arash-11
 pubDatetime: 2021-11-07
-title: What does npx do?
+title: npx versus npm
 postSlug: what-does-npx-do
 featured: false
 description: Finding out what the `npx` command does and how it's different from `npm`.
