@@ -69,6 +69,9 @@
     prose-img:!mt-2 prose-img:border-2 
     prose-img:border-skin-line prose-hr:!border-skin-line;
   }
+  .prose p::before {
+    display: none;
+  }
   .prose a {
     @apply hover:!text-skin-accent;
   }
