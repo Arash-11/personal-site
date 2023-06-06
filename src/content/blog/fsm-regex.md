@@ -25,7 +25,7 @@ The term "machine" here is somewhat interchangeable with "computer" but it's tec
 
 They are "abstract" in that they ignore many of the details present in actual (hardware) machines and they are "machines" in that they execute programs one step at a time. Turing Machines, Cellular Automata, Lambda Calculus, and Finite Automata are a few examples of abstract machines.
 
-An abstract machine implemented in software is called a **virtual machine**. Some examples of this are LLVM, JVM, BEAM (Erland VM), Android Runtime (ART), and Valgrind.
+An abstract machine implemented in software is called a **virtual machine**. Some examples of this are LLVM, JVM, BEAM (Erlang VM), Android Runtime (ART), and Valgrind.
 
 > From here on, note that I will use the terms "machine" and "automaton" interchangeably since we're only dealing in the abstract and not with any physical device.
 
