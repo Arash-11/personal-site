@@ -141,7 +141,7 @@ You might be wondering what if the NFA cannot be converted into a DFA -- can NFA
 
 The answer turns out to be yes. The proof for that is out of the scope of this blog post but you can check out the paper "<a href="https://ieeexplore.ieee.org/document/5392601" target="_blank" rel="noopener noreferrer">Finite Automata and Their Decision Problems</a>" if you're interested.
 
-However, there is a caveat. For the proof to work and to guarantee that your NFA can be converted into a DFA, you have to strictly stick to a finite automaton. Many modern regular expression engines do not strictly adhere to this theoretical computer science definition.
+However, there is a caveat. For the proof to work and to guarantee that your NFA can be converted into a DFA, you have to strictly stick to a finite automaton. Many modern regular expression engines are <a href="https://en.wikipedia.org/wiki/Regular_expression#Patterns_for_non-regular_languages" target="_blank" rel="noopener noreferrer">augmented with features</a> that do not strictly adhere to this theoretical computer science definition.
 
 <br />
 
