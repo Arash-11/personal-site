@@ -4,7 +4,7 @@ pubDatetime: 2023-06-06
 title: Finite automata and regular expressions
 postSlug: fsm-regex
 featured: false
-description: A closer look at the computer science theory behind regular expressions.
+description: A primer on the computer science theory behind regular expressions.
 ---
 
 I recently got curious about the inner workings of regular expression engines (the code that executes your regexes) and especially the computer science theory behind regular expressions themselves. So I decided to dig deeper into them by taking a fundamentals-first/bottom-up approach and writing down my learnings in the form of this blog post; kind of like a more polished version of my notes that, if still not useful for anyone else, I can at least come back to in the future.
@@ -85,7 +85,7 @@ The `L` in L(M<sub>1</sub>) stands for "Language", and as you might be able to t
 
 Another important term that often comes up when talking about languages is **regular language**. If a given machine is a finite automaton, its language is called a regular language. Likewise, if a given language is recognized by a finite automaton, it is a regular language.
 
-The language of M<sub>1</sub> (which is L(M<sub>1</sub>)) is a regular language.
+The language of M<sub>1</sub>, that is L(M<sub>1</sub>), is a regular language.
 
 We'll shortly see how this relates to regular expressions, but first, we'll need to look a little more at finite automata.
 
@@ -121,7 +121,7 @@ Drawing state diagrams like the ones above whenever you need to think about or u
 
 A **regular expression** describes a finite automaton. As a matter of fact, a regular expression _is_ a finite automaton, and vice versa.
 
-(By the way, finite automata and regular expressions are also equivalent to the <a href="https://en.wikipedia.org/wiki/Chomsky_hierarchy#The_hierarchy" target="_blank" rel="noopener noreferrer">Type-3 grammer in the Chomsky hierarchy</a>, which I won't go into detail here.)
+(By the way, finite automata and regular expressions are also equivalent to the <a href="https://en.wikipedia.org/wiki/Chomsky_hierarchy#The_hierarchy" target="_blank" rel="noopener noreferrer">Type-3 grammar in the Chomsky hierarchy</a>, which I won't go into detail here.)
 
 For the regular expression `ab*c`, we can create the following DFA:
 
@@ -141,7 +141,7 @@ You might be wondering what if the NFA cannot be converted into a DFA -- can NFA
 
 The answer turns out to be yes. The proof for that is out of the scope of this blog post but you can check out the paper "<a href="https://ieeexplore.ieee.org/document/5392601" target="_blank" rel="noopener noreferrer">Finite Automata and Their Decision Problems</a>" if you're interested.
 
-However, there is a caveat. For the proof to work and to guarantee that your NFA can be converted into a DFA, you have to strictly stick to a finite automaton. Many modern regular expression engines are  that do not strictly adhere to this theoretical computer science definition.
+However, there is a caveat. For the proof to work and to guarantee that your NFA can be converted into a DFA, you have to strictly stick to a finite automaton. Many modern regular expression engines do not strictly adhere to this theoretical computer science definition.
 
 <br />
 
