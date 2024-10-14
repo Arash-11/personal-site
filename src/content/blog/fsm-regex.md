@@ -10,6 +10,7 @@ description: A primer on the computer science theory behind regular expressions.
 I recently got curious about the inner workings of regular expression engines (the code that executes your regexes) and especially the computer science theory behind regular expressions themselves. So I decided to dig deeper into them by taking a fundamentals-first/bottom-up approach and writing down my learnings in the form of this blog post; kind of like a more polished version of my notes that, if still not useful for anyone else, I can at least come back to in the future.
 
 Before we start, there are a few things to note:
+
 - I will skip some definitions for the sake of brevity.
 - Some of these definitions are not rigorously defined in computer science academia and so it's important to remember that many of them are not set in stone and are considered more as approximations.
 - Last but not least, keep in mind that I'm not an expert in this topic and this is just me jotting down my thoughts as I learn many of these things for the first time.
@@ -19,6 +20,7 @@ With the prelude out of the way, let's start by quickly defining an abstract mac
 <br />
 
 # Abstract machines
+
 In theoretical computer science, an **abstract machine** is a <a href="https://en.wikipedia.org/wiki/Model_of_computation" target="_blank" rel="noopener noreferrer">model of computation</a>, a framework or model that describes the functionality of a machine, and what a machine can and cannot do.
 
 The term "machine" here is somewhat interchangeable with "computer" but it's technically not accurate, since a machine can also refer to something theoretical. This is exactly what an abstract machine is actually -- it's theoretical. It ignores many aspects of hardware and focuses instead on the essential aspects of the computation process; something that you can think and reason about using just pen and paper.
@@ -32,12 +34,13 @@ An abstract machine implemented in software is called a **virtual machine**. Som
 <br />
 
 # Finite automata
+
 A **finite automaton**, or a **finite-state machine (FSM)**, is the simplest model of computation that we can construct. It is an abstract machine that can be in exactly one of a finite number of _states_ at any given time and it changes states in response to an input; this change of state is called a _transition_.
 
 A finite automaton usually has two special states: a _start_ state at which it starts and an _accept_ state at which it ends, indicating that there's a match. The automaton starts at its start state, reads symbols one at a time from the input string, and follows the corresponding transitions. If the last state it's in is an accept state, it implies that the input string matches.
 
 > A **string** is a finite _<a href="https://en.wikipedia.org/wiki/Sequence" target="_blank" rel="noopener noreferrer">sequence</a>_ of symbols.
-Conceptually, it's very similar to the string data type most programming languages use. All of the following are valid strings that a machine can operate on: `12345`, `01101`, `hello`, `😄😃😆`, `7#1ab😃`.
+> Conceptually, it's very similar to the string data type most programming languages use. All of the following are valid strings that a machine can operate on: `12345`, `01101`, `hello`, `😄😃😆`, `7#1ab😃`.
 
 > An **alphabet** is the _set_ of input symbols, even if they are the digits 0 and 1.
 
@@ -73,9 +76,10 @@ It may or may not be obvious at first glance but the only time this machine will
 
 With the above information, we can define this machine, M<sub>1</sub>, as such:
 
-- ```L(M1) = { w | w contains the substring 11 }```
+- `L(M1) = { w | w contains the substring 11 }`
 
 We can also say the following:
+
 - "L(M<sub>1</sub>) is the language of M<sub>1</sub>", or
 - "M<sub>1</sub> recognizes L(M<sub>1</sub>)"
 
@@ -92,11 +96,14 @@ We'll shortly see how this relates to regular expressions, but first, we'll need
 <br />
 
 # Deterministic and nondeterministic finite automata
+
 When someone says "finite automaton", they're referring to one of the two types of finite automata:
+
 - **Deterministic finite automata (DFA)**
 - **Nondeterministic finite automata (NFA)**
 
 <a href="https://en.wikipedia.org/wiki/Nondeterministic_finite_automaton" target="_blank" rel="noopener noreferrer">Wikipedia defines DFA</a> as follows:
+
 > - each of its transitions is uniquely determined by its source state and input symbol, and
 > - reading an input symbol is required for each state transition.
 
@@ -117,6 +124,7 @@ Now that we've looked at DFAs and NFAs, I think it's a good time to look at regu
 <br />
 
 # Regular expressions
+
 Drawing state diagrams like the ones above whenever you need to think about or use finite automata can become a hassle. The mathematician <a href="https://en.wikipedia.org/wiki/Stephen_Cole_Kleene" target="_blank" rel="noopener noreferrer">Stephen Kleene</a> wanted a way to describe regular languages more compactly, and so he came up with regular expressions in 1951.
 
 A **regular expression** describes a finite automaton. As a matter of fact, a regular expression _is_ a finite automaton, and vice versa.
@@ -146,10 +154,11 @@ However, there is a caveat. For the proof to work and to guarantee that your NFA
 <br />
 
 # Summary
+
 I might write another post in the future that goes into more detail on one or several of the topics we touched here but I think I'll wrap up this post here. We started by looking at a definition for abstract machines and then moved on to finite automata, both deterministic and nondeterministic ones, and finally looked a little more closely at regular expressions.
 
-I did not mention some of the more formal and mathematical definitions (eg. a finite automata is a 5-tuple defined as `M = (Q, Σ, δ, q0, F)`; looking up what the different symbols mean will be an exercise for you, the reader, if you're interested). I also did not go into detail of the implementation of regular expression engines, but Russ Cox has <a href="https://swtch.com/~rsc/regexp/" target="_blank" rel="noopener noreferrer">written some great stuff on the topic</a> (by the way, he's the original author of <a href="https://github.com/google/re2" target="_blank" rel="noopener noreferrer">Google's RE2</a>, a fast regex engine that runs in linear-time that combats <a href="https://owasp.org/www-community/attacks/Regular_expression_Denial_of_Service_-_ReDoS" target="_blank" rel="noopener noreferrer">ReDos</a>).
+I did not mention some of the more formal and mathematical definitions (eg. a finite automata is a 5-tuple defined as `M = (Q, Σ, δ, q0, F)`; looking up what the different symbols mean will be an exercise for you, the reader, if you're interested). I also did not go into detail of the implementation of regular expression engines, but Russ Cox has <a href="https://swtch.com/~rsc/regexp/" target="_blank" rel="noopener noreferrer">written some great stuff on the topic</a>.
 
-<br />
+---
 
-I hope you enjoyed reading this and I'd love to hear if you have any comments/questions/feedback. You can reach out to me on <a href="https://twitter.com/arash11gt" target="_blank" rel="noopener noreferrer">Twitter</a>. Until next time!
+I'd love to hear if you have any comments/questions/feedback. You can reach out to me on <a href="https://x.com/arash11gt" target="_blank">Twitter</a>.

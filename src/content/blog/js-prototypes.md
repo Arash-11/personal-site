@@ -13,7 +13,7 @@ One of the concepts that I was having some difficulty wrapping my head around wh
 
 _Note: The only straight line used is to represent the prototype chain. Curved arrows are used for describing the properties and adding a little more context._
 
-<br />
+---
 
 ### `[[Prototype]]` and `prototype`
 
@@ -33,7 +33,7 @@ Its instance will have also have a hidden `[[Prototype]]` property that points t
 
 As you can see, an instance's hidden `[[Prototype]]` property points to its constructor's `prototype` property. At the same time, this constructor's `[[Prototype]]` points to its parent constructor's `prototype`, and so on. These links create a chain - this is called the **prototype chain**.
 
-<br />
+---
 
 ### Accessing `[[Prototype]]`
 
@@ -43,4 +43,6 @@ However, using `__proto__` is often discouraged. Instead, there's another way to
 
 I hope this article helped clarify the different "prototype"s a little. This article is in no way comprehensive and only goes over a few parts related to JavaScript's prototypal inheritance. If you'd like to read more about inheritance and the prototype chain, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain" target="_blank" rel="noopener noreferrer">this MDN doc</a> is a good place.
 
-I hope you enjoyed reading this and I'd love to hear if you have any comments. You can reach out to me on [Twitter](https://twitter.com/arash11gt). Until next time!
+---
+
+I'd love to hear if you have any comments. You can reach out to me on <a href="https://x.com/arash11gt" target="_blank">Twitter</a>.

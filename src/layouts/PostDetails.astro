@@ -23,7 +23,7 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
 
 <Layout title={title} author={author} description={description} ogImage={ogUrl}>
   <Header />
-  <div class="mx-auto flex w-full max-w-3xl justify-start px-2">
+  <!-- <div class="mx-auto flex w-full max-w-3xl justify-start px-2">
     <a
       class="focus-outline mt-8 mb-2 flex hover:opacity-75"
       href="/"
@@ -34,7 +34,7 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
         ></path>
       </svg><span>Go back</span>
     </a>
-  </div>
+  </div> -->
   <main id="main-content">
     <h1 class="post-title">{title}</h1>
     <Datetime datetime={pubDatetime} size="lg" className="my-2" />
@@ -51,7 +51,7 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
 
 <style>
   main {
-    @apply mt-5 mx-auto w-full max-w-3xl px-4 pb-12;
+    @apply mx-auto mt-5 w-full max-w-3xl px-4 pb-12;
   }
   .post-title {
     @apply text-2xl font-semibold text-skin-accent;

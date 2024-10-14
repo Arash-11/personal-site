@@ -11,7 +11,7 @@ I went in to read the 1974 paper on UNIX, titled <a href="https://dsf.berkeley.e
 
 The technical aspects such as how the filesystem is designed and why everything in UNIX is a file <sup><a href="#footnote-1" id="footnote-ref-1">1</a></sup> is already described in the paper and many other resources so I'll skip talking about that stuff and instead note my takeaways regarding the design decisions that were made.
 
-<br />
+---
 
 The paper's introduction ends with the following:
 
@@ -26,7 +26,7 @@ UNIX wasn't designed out of a business need or with any grand goals -- Ken Thomp
 
 Starting with this, UNIX morphed into a platform that provided you not only a foundation to build things upon, but one that allowed you to improve the platform itself and provided you with Lego-like building blocks to help you build as you wished.
 
-<br />
+---
 
 Continuing with the paper, it then goes on to list the "Three considerations which influenced the design of UNIX":
 
@@ -42,12 +42,12 @@ Constraints can force you to innovate and create something of more elegance; emb
 
 The system can be molded over and over again as time goes on, continuously evolving. This is probably one of the reasons why UNIX has had such a long-lasting impact to this day (remember, the paper was written in 1974!).
 
-<br />
+---
 
 The paper goes on to mention that UNIX did have the Berkeley time-sharing system and Multics as influences, so the above points may not all be UNIX-original. But UNIX was the one that popularized them. It's not a perfect system by any means but it's been interesting to see its impact and legacy to this day. And although most people might not think of UNIX as "<a href="https://museapp.com/podcast/27-playful-software/" target="_blank" rel="noopener noreferrer">playful software</a>", its philosophy does embody the concept to some degree in my opinion. Looking at the present and toward the future, I'm excited about many OS projects -- including <a href="https://www.serenityos.org/" target="_blank" rel="noopener noreferrer">SerenityOS</a>, <a href="https://100r.co/site/uxn.html" target="_blank" rel="noopener noreferrer">uxn</a>, and <a href="https://playb.it/" target="_blank" rel="noopener noreferrer">playbit</a> -- that embody aspects of the UNIX philosophy (and other cool features!) that I personally like.
 
 ---
 
 <p id="footnote-1">
-<a href="#footnote-ref-1">1</a> This may not be technically accurate, at least not anymore, as mentioned in <a href="https://unix.stackexchange.com/a/141020" target="_blank" rel="noopener noreferrer">this unix.stackexchange post</a>.
+<a href="#footnote-ref-1">1</a> This <a href="https://unix.stackexchange.com/a/141020" target="_blank" rel="noopener noreferrer">may not be technically accurate, at least not anymore</a>.
 </p>

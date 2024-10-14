@@ -75,7 +75,7 @@ What we can understand from this is that it’s the variable that is immutable a
 
 A mental model we can have is that the values themselves are not immutable or mutable, they just exist. A variable that holds or points to a certain value is immutable when you cannot make it hold or point to a different value. And it’s mutable when you can make it hold or point to a different value.
 
-In our above code, as per <a href="https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html" target="_blank" rel="noopener noreferrer">Rust’s ownership rules</a>, a “move” occurs when we pass `data` to the `string_uppercase` function; i.e. `string_uppercase` takes ownership of the value. As a new owner, it can set the mutability of the *value* that it receives to anything it wants - again, it’s not the variable, it’s the value that it needs and receives. And the function declaration sets the value of `data` mutably.
+In our above code, as per <a href="https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html" target="_blank" rel="noopener noreferrer">Rust’s ownership rules</a>, a “move” occurs when we pass `data` to the `string_uppercase` function; i.e. `string_uppercase` takes ownership of the value. As a new owner, it can set the mutability of the _value_ that it receives to anything it wants - again, it’s not the variable, it’s the value that it needs and receives. And the function declaration sets the value of `data` mutably.
 
 As a test, if we make the `data` variable mutable in main:
 
@@ -110,8 +110,10 @@ As an example, note the difference in the keyword `mut`'s position in the follow
 1. `string_uppercase(mut data: String)` - this indicates that `data` is a mutable variable that "holds" a _moved_ `String`.
 2. `string_uppercase(data: &mut String)` - this indicates that `data` is an immutable variable that "holds" a mutable reference to a `String`.
 
-<br />
+---
 
 To summarize, immutability in Rust applies to variables and not values. Once a function or a variable becomes the new owner of a value, it can make it mutable or immutable regardless of the value's previous owner's mutability declaration. And that there’s a difference between a move where a value’s new owner may be mutable and a mutable borrow - in this case, the type signatures and function signatures will differ too.
 
-I hope you enjoyed reading this and I'd love to hear if you have any comments. You can reach out to me on [Twitter](https://twitter.com/arash11gt). Until next time!
+---
+
+I'd love to hear if you have any comments. You can reach out to me on <a href="https://x.com/arash11gt" target="_blank">Twitter</a>.

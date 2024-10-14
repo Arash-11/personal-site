@@ -6,10 +6,10 @@ import Footer from "@components/Footer.astro";
 import LinkButton from "@components/LinkButton.astro";
 import Hr from "@components/Hr.astro";
 import Card from "@components/Card";
-import Socials from "@components/Socials.astro";
+// import Socials from "@components/Socials.astro";
+import { SOCIALS } from "@config";
 import getSortedPosts from "@utils/getSortedPosts";
 import slugify from "@utils/slugify";
-import { SOCIALS } from "@config";
 
 const posts = await getCollection("blog");
 
@@ -17,36 +17,34 @@ const sortedPosts = getSortedPosts(posts);
 const isEnoughSortedPosts = sortedPosts.length > 10;
 const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 
-const socialCount = SOCIALS.filter(social => social.active).length;
+// const socialCount = SOCIALS.filter(social => social.active).length;
+const socials = SOCIALS.filter(social => social.active);
 ---
 
 <Layout>
   <Header />
   <main id="main-content">
     <section id="hero">
-      <h1>
-        <LinkButton
-          className="hover:text-skin-accent underline underline-offset-4 decoration-dashed"
-          href="https://en.wikipedia.org/wiki/Whoami"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          whoami
-        </LinkButton>
-      </h1>
-
       <p>
-        <span>Hi, I'm Arash. I'm on a journey through the computing stack, peeking behind the various curtains of abstractions on my way.</span>
-        This site is where I document my learnings on computer science and software development, and any side projects that I work on.
+        Hi, I'm Arash. I'm on a journey through the computing stack, peeking
+        behind the various curtains of abstractions.
       </p>
-      {
+      <!-- {
         // only display if at least one social link is enabled
         socialCount > 0 && (
           <div class="social-wrapper">
             <Socials />
           </div>
         )
-      }
+      } -->
+      <br />
+      <LinkButton target="_blank" href={socials[0].href}>
+        {socials[0].name}
+      </LinkButton>
+      <span>/</span>
+      <LinkButton target="_blank" href={socials[1].href}>
+        {socials[1].name}
+      </LinkButton>
     </section>
 
     <Hr />
@@ -72,12 +70,12 @@ const socialCount = SOCIALS.filter(social => social.active).length;
     }
 
     <section id="recent-posts">
-      <h2>{isEnoughSortedPosts ? 'Recent' : '' } Posts</h2>
+      <h2>{isEnoughSortedPosts ? "Recent" : ""} Posts</h2>
       <ul>
         {
           sortedPosts.map(
             ({ data }, index) =>
-              index < 4 && (
+              index < 10 && (
                 <Card
                   href={`/posts/${slugify(data)}`}
                   frontmatter={data}
@@ -92,10 +90,8 @@ const socialCount = SOCIALS.filter(social => social.active).length;
           <div class="all-posts-btn-wrapper">
             <LinkButton href="/posts">
               All Posts
-              <svg xmlns="http://www.w3.org/2000/svg"
-                ><path
-                  d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
-                ></path>
+              <svg xmlns="http://www.w3.org/2000/svg">
+                <path d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z" />
               </svg>
             </LinkButton>
           </div>
@@ -110,13 +106,13 @@ const socialCount = SOCIALS.filter(social => social.active).length;
 <style>
   /* ===== Hero Section ===== */
   #hero {
-    @apply pt-8 pb-6;
+    @apply pb-6 pt-8;
   }
   #hero h1 {
     @apply my-4 inline-block text-2xl font-bold sm:my-8 sm:text-2xl;
   }
   #hero p span {
-    @apply block mb-4;
+    @apply mb-4 block;
   }
   #hero .rss-link {
     @apply mb-6;
@@ -131,13 +127,13 @@ const socialCount = SOCIALS.filter(social => social.active).length;
     @apply mt-4 flex flex-col sm:flex-row sm:items-center;
   }
   .social-links {
-    @apply mr-2 mb-1 whitespace-nowrap sm:mb-0;
+    @apply mb-1 mr-2 whitespace-nowrap sm:mb-0;
   }
 
   /* ===== Featured & Recent Posts Sections ===== */
   #featured,
   #recent-posts {
-    @apply pt-12 pb-6;
+    @apply pb-6 pt-12;
   }
   #featured h2,
   #recent-posts h2 {

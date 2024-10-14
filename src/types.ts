@@ -22,11 +22,15 @@ export type SocialIcons = {
 
 export type SocialMedia =
   | "Github"
+  | "github"
   | "Facebook"
   | "Instagram"
   | "LinkedIn"
   | "Mail"
   | "Twitter"
+  | "twitter"
+  | "X"
+  | "x"
   | "Twitch"
   | "YouTube"
   | "WhatsApp"

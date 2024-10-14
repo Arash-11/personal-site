@@ -15,7 +15,7 @@ On the other hand, `npm` is a <strong>task manager</strong>, and only installs a
 
 Let's look at two examples to understand what this means.
 
-<br />
+---
 
 ### EXAMPLE 1
 
@@ -72,7 +72,8 @@ you can just run the following command:
 ```sh
 $ npx webpack
 ```
-<br />
+
+---
 
 ### EXAMPLE 2
 
@@ -100,7 +101,7 @@ There must be an easier way to tackle this? You guessed it - `npx`. If you want 
 $ npx create-react-app my-app
 ```
 
-<br />
+---
 
 Using our two examples above, let's look at the three main features of `npx`.
 
@@ -126,8 +127,8 @@ A good example of this is create-react-app, as seen in **EXAMPLE 2** above. The 
 $ npx https://gist.github.com/zkat/4bc19503fe9e9309e2bfaa2c58074d32
 ```
 
-<br />
+---
 
 To summarize, `npx` is a task runner that gives you a lot of flexibility when installing npm packages, and achieving that without clogging up your machine's filesystem unnecessarily - for this reason, it's recommended you use `npx` whenever possible.
 
-I hope you enjoyed reading this and I'd love to hear if you have any comments. You can reach out to me on [Twitter](https://twitter.com/arash11gt). Until next time!
+I'd love to hear if you have any comments. You can reach out to me on <a href="https://x.com/arash11gt" target="_blank">Twitter</a>.

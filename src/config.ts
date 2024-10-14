@@ -3,8 +3,8 @@ import type { Site, SocialObjects } from "./types";
 export const SITE: Site = {
   website: "https://arashn.com/",
   author: "arash-11",
-  desc: "Personal site of arash-11, mostly about computer science and software development.",
-  title: "arash-11",
+  desc: "Personal site of arash-11, about computer science and software development.",
+  title: "home",
   ogImage: "",
   lightAndDarkMode: true,
   postPerPage: 10,
@@ -22,13 +22,13 @@ export const LOGO_IMAGE = {
 
 export const SOCIALS: SocialObjects = [
   {
-    name: "Twitter",
-    href: "https://twitter.com/arash11gt",
-    linkTitle: `${SITE.title} on Twitter`,
+    name: "twitter",
+    href: "https://x.com/arash11gt",
+    linkTitle: `${SITE.title} on X`,
     active: true,
   },
   {
-    name: "Github",
+    name: "github",
     href: "https://github.com/Arash-11",
     linkTitle: ` ${SITE.title} on Github`,
     active: true,
@@ -37,7 +37,7 @@ export const SOCIALS: SocialObjects = [
     name: "LinkedIn",
     href: "https://linkedin.com/in/arash-nawyan/",
     linkTitle: `${SITE.title} on LinkedIn`,
-    active: true,
+    active: false,
   },
   {
     name: "Mail",
