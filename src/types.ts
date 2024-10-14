@@ -21,27 +21,14 @@ export type SocialIcons = {
 };
 
 export type SocialMedia =
-  | "Github"
+  | "GitHub"
   | "github"
-  | "Facebook"
-  | "Instagram"
   | "LinkedIn"
-  | "Mail"
+  | "linkedin"
+  | "Email"
   | "Twitter"
   | "twitter"
   | "X"
   | "x"
-  | "Twitch"
-  | "YouTube"
-  | "WhatsApp"
-  | "Snapchat"
-  | "Pinterest"
-  | "TikTok"
-  | "CodePen"
-  | "Discord"
-  | "GitLab"
-  | "Reddit"
-  | "Skype"
-  | "Steam"
-  | "Telegram"
-  | "Mastodon";
+  | "Goodreads"
+  | "goodreads";

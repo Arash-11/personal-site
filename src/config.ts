@@ -22,25 +22,31 @@ export const LOGO_IMAGE = {
 
 export const SOCIALS: SocialObjects = [
   {
-    name: "twitter",
+    name: "Twitter",
     href: "https://x.com/arash11gt",
     linkTitle: `${SITE.title} on X`,
     active: true,
   },
   {
-    name: "github",
+    name: "GitHub",
     href: "https://github.com/Arash-11",
-    linkTitle: ` ${SITE.title} on Github`,
+    linkTitle: ` ${SITE.title} on GitHub`,
     active: true,
   },
   {
     name: "LinkedIn",
     href: "https://linkedin.com/in/arash-nawyan/",
     linkTitle: `${SITE.title} on LinkedIn`,
-    active: false,
+    active: true,
   },
   {
-    name: "Mail",
+    name: "Goodreads",
+    href: "https://www.goodreads.com/user/show/152020696-arash",
+    linkTitle: `${SITE.title} on Goodreads`,
+    active: true,
+  },
+  {
+    name: "Email",
     href: "mailto:yourmail@gmail.com",
     linkTitle: `Send an email to ${SITE.title}`,
     active: false,
